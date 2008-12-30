@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - Data validation class for Australia
 Summary(pl.UTF-8):	%{_pearname} - klasa sprawdzająca poprawność danych dla Australii
 Name:		php-pear-%{_pearname}
-Version:	0.1.2
+Version:	0.1.3
 Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	1c98f91f4b95864c4e48a26eddda4d81
+# Source0-md5:	38b52c717ba497fdb3521bc135c200fc
 URL:		http://pear.php.net/package/Validate_AU/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
