@@ -7,7 +7,7 @@ Summary:	%{_pearname} - Data validation class for Australia
 Summary(pl.UTF-8):	%{_pearname} - klasa sprawdzająca poprawność danych dla Australii
 Name:		php-pear-%{_pearname}
 Version:	0.1.3
-Release:	3
+Release:	4
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -47,8 +47,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
@@ -58,6 +58,10 @@ Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
+
+mv .%{php_pear_dir}/data/%{_pearname}/{data/*,}
+rmdir .%{php_pear_dir}/data/%{_pearname}/data
+mv docs/{%{_pearname}/*,.}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -69,11 +73,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc install.log docs/Validate_AU/LICENSE
+%doc install.log docs/LICENSE
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/Validate/AU.php
-%{php_pear_dir}/data/Validate_AU/data/AU_postcodes.txt
-%dir %{php_pear_dir}/data/Validate_AU
+%{php_pear_dir}/data/%{_pearname}
 
 %files tests
 %defattr(644,root,root,755)
