@@ -1,19 +1,17 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		Validate
-%define		_subclass	AU
 %define		_status		alpha
 %define		_pearname	Validate_AU
 Summary:	%{_pearname} - Data validation class for Australia
 Summary(pl.UTF-8):	%{_pearname} - klasa sprawdzająca poprawność danych dla Australii
 Name:		php-pear-%{_pearname}
 Version:	0.1.3
-Release:	4
+Release:	5
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	38b52c717ba497fdb3521bc135c200fc
 URL:		http://pear.php.net/package/Validate_AU/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.9
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-pear-Validate >= 0.5.0
