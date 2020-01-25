@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		alpha
 %define		_pearname	Validate_AU
 Summary:	%{_pearname} - Data validation class for Australia
